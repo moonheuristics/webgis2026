@@ -22,6 +22,24 @@
   var map = new google.maps.Map(document.getElementById("UNCC_CAMPUS"), myOptions);
 }
 </script>
+
+  
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
+</script>
+<script type+"text/javascript">
+  function initialize()
+{
+  var latlng = new google.maps.LatLng(35, - 80);
+  var myOptions = {
+    zoom: 16,
+      center: latlng,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+  };
+  var map = new google.maps.Map(document.getElementById("PIN_MECH"), myOptions);
+}
+</script>
+
+  
 </head>
 <body onload="initialize()">
 <h1> Lab 2 for Web GIS </h1>
@@ -81,7 +99,7 @@ function prod(arr) {
 <h3>General UNCC Campus</h3>
 <div id="UNCC_CAMPUS" style="width:50%; height:50%"></div>
 <h3><i>Map of Pins Mechcanical, Charlotte, NC, USA</i> | hybrid</h3>
-<div id="UNCC_CAMPUS" style="width:50%; height:50%"></div>
+<div id="PIN_MECH" style="width:50%; height:50%"></div>
 <h3><i>Map of Stone and Arabia Mountain, AT, USA | terrain</i></h3>
 <div id="MOUNT" style="width:50%; height:50%"></div>
 <h3><i>Map of Southport, NC, USA</i> | hybrid</h3>
