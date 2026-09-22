@@ -66,6 +66,16 @@ var k = [1, 2, 3];
   document.write(sum(k));
 </script>
 <!--I wonder if you can subsitute the varible with a symbol to change it directly using a form-->
+<h3> Defining a product</h3>
+  <script type="text/javascript">
+function prod(arr) {
+  return arr.reduce(function (a, b) {
+    return a * b;
+  }, 1);
+}
+    var j = [200, 300];
+    document.write(prod(j));
+  </script>
 <br>
 <div id="map_canvas" style="width:50%; height:50%"></div>
 </body>
