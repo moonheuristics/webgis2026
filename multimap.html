@@ -19,13 +19,47 @@
 <script type="text/javascript">
   function initialize()
 {
-  var latlng = new google.maps.LatLng(35.306840, - 80.73200);
-  var myOptions = {
-    zoom: 16,
-      center: latlng,
+  var UNCC = new google.maps.LatLng(35.3072442, - 80.7304914);
+  var PINMECH = new google.map.LatLng(35.210780, - 80.864417);
+  var MOUNT = new google.map.LatLng(33.666843, - 84.114728);
+  var GRANDDAD = new google.map.LatLng(33.916925, - -78.018463);
+  var HARP = new google.map.LatLng(53.277090, - 3.066349);
+  
+  var VUNCC = {
+    zoom: 20,
+      center: UNCC,
     mapTypeId: google.maps.MapTypeId.HYBRID
   };
-  var map = new google.maps.Map(document.getElementById("UNCC_CAMPUS"), myOptions);
+  
+  var VPINMECH = {
+      zoom: 20,
+      center: PINMECH,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+  
+  var VMOUNT = {
+      zoom: 14,
+      center: MOUNT,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+  
+  var VGRANDDAD = {
+      zoom: 16,
+      center: GRANDDAD,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+  var VHARP = {
+      zoom: 14,
+      center: HARP,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+
+  
+  var map = new google.maps.Map(document.getElementById("UNCC_IMAP"), VUNCC);
+  var map = new google.maps.Map(document.getElementById("PINMECH_IMAP"), VPINMECH);
+  var map = new google.maps.Map(document.getElementById("MOUNT_IMAP"), VMOUNT);
+  var map = new google.maps.Map(document.getElementById("GRANDDAD_IMAP"), VGRANDDAD);
+  var map = new google.maps.Map(document.getElementById("HARP_IMAP"), VHARP);
 }
 </script>
     
@@ -48,7 +82,14 @@
 </head>
 <body onload="initialize()">
   </body>
-    <div id="UNCC_CAMPUS" style="width:50%; height:50%"></div>
+    <div id="VUNCC" style="width:50%; height:50%"></div>
     <br>
-    <div id="PINMECH" style="width:50%; height:50%"></div>
+    <div id="VPINMECH" style="width:50%; height:50%"></div>
+    <br>
+    <div id="VMOUNT" style="width:50%; height:50%"></div>
+    <br>
+    <div id="VGRANDDAD" style="width:50%; height:50%"></div>
+    <br>
+    <div id="VHARP" style="width:50%; height:50%"></div>
+    <br>
 </html>
