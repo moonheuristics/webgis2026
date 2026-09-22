@@ -7,30 +7,30 @@
     <!--having trouble with multiple google api on same page 
     using javascript and CSS. I am testing here without fear 
     of fucking up Lab 2.-->
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<style type="text/css">
-html { height: 100% }
-  body { height: 80%; margin: 0px; padding: 40px }
-#map_canvas { height: 50% }
-</style>
-    
-<script type="text/javascript"
-src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+  <style type="text/css">
+    html {height:100%}
+    body {height:80%; margin:0; padding:40}
+    #map_canvas {height: 50%}
+  </style>
+  
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
 </script>
-    
-<script type="text/javascript">
-function initialize()
+<script type+"text/javascript">
+  function initialize()
 {
-  var latlng = new google.maps.LatLng(35.306840, -80.73200);
+  var latlng = new google.maps.LatLng(35.306840, - 80.73200);
   var myOptions = {
     zoom: 16,
-    center: latlng,
+      center: latlng,
     mapTypeId: google.maps.MapTypeId.HYBRID
-      };
-  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  };
+  var map = new google.maps.Map(document.getElementById("UNCC_CAMPUS"), myOptions);
 }
 </script>
-    
-    <body onload="initialize()">
+ 
+</head>
+<body onload="initialize()">
   </body>
+    <div id="UNCC_CAMPUS" style="width:50%; height:50%"></div>
 </html>
