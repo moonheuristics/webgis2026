@@ -1,27 +1,26 @@
 <html>
 <head>
   <title> Lab 2 WEBGIS</title>
-  <meta name="viewport" content"initial-scale=1.0,user-scalable=no" />
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <style type="text/css">
-    html {height: 100}
-    body {height:80;margin:0;padding:40}
-    #map_canvas {height:50}
-    </style>
-    <script type="text/javascript"
-      src="https://maps.google.com/maps/api/js?sensor=false&key="AIzaSyB5U-lTv1hoJo_-ON8qVBXtEGXfZI80S7k" alt="You fucked up bud"
-        </script>
-  <script type="text/javascript">
-    function initialize()
-    {
-      var latlng = new google.maps.LatLng(35.306840,-80.73200);
-      var myOptions = {
-        zoom: 16,
-        center:latlng,
-        mapTypeId:google.maps.MapTypeId.HYBRID
-      };
-      var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    }
-      </script>
+    html {height:100}
+    body {height:80; margin 0; padding: 40}
+    #map_canvas {height: 50}
+  </style>
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
+</script>
+  <script type+"text/javascript">
+  function initialize()
+{
+  var latlng = new google.maps.LatLng(35.306840, - 80.73200);
+  var myOptions = {
+    zoom:16,
+      center:latlng,
+    mapTypeId:google.maps.MapTypeId.HYBRID
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+}
+</script>
 </head>
 <body>
 <h1> Lab 2 for Web GIS </h1>
@@ -67,26 +66,6 @@ var k = [1, 2, 3];
   document.write(sum(k));
 </script>
 <!--I wonder if you can subsitute the varible with a symbol to change it directly using a form-->
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <style type="text/css">
-    html {height:100}
-    body {height:80; margin 0; padding: 40}
-    #map_canvas {height: 50}
-  </style>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
-</script>
-  <script type+"text/javascript">
-  function initialize()
-{
-  var latlng = new google.maps.LatLng(35.306840, - 80.73200);
-  var myOptions = {
-    zoom:16,
-      center:latlng,
-    mapTypeId:google.maps.MapTypeId.HYBRID
-  };
-  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-}
-</script>
 <br>
 <div id="map_canvas" style="width:50,height50"></div>
 </body>
