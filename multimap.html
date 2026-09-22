@@ -28,9 +28,21 @@
   var map = new google.maps.Map(document.getElementById("UNCC_CAMPUS"), myOptions);
 }
 </script>
- 
+ <script type+"text/javascript">
+  function initialize()
+{
+  var latlng = new google.maps.LatLng(35.306840, - 80.73200);
+  var myOptions = {
+    zoom: 16,
+      center: latlng,
+    mapTypeId: google.maps.MapTypeId.HYBRID
+  };
+  var map = new google.maps.Map(document.getElementById("PINMECH"), myOptions);
+}
+</script>
 </head>
 <body onload="initialize()">
   </body>
     <div id="UNCC_CAMPUS" style="width:50%; height:50%"></div>
+    <div id="PINMECH" style="width:50%; height:40%"></div>
 </html>
