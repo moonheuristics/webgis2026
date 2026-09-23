@@ -8,39 +8,39 @@
     using javascript and CSS. I am testing here without fear 
     of fucking up Lab 2.-->
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-  <style type="text/css">
-    html { height: 100% }
-    body { height: 80%; margin: 0px; padding: 40px }
-    #map_canvas { height: 50% }
-  </style>
+<style type="text/css">
+  html { height: 100% }
+  body { height: 80%; margin: 0px; padding: 40px }
+  #map_canvas { height: 50% }
+</style>
 <script type="text/javascript" 
   src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
 </script>
 <script type="text/javascript">
   function initialize() {
     
-    var latlng = new google.maps.LatLng(35.3072442, - 80.7304914);
-    var latlng1 = new google.map.LatLng(35.210780, - 80.864417);
-  
+    var latlng = new google.maps.LatLng(35.3072442, -80.7304914);
+    var latlng1 = new google.map.LatLng(35.210780, -80.864417);
     var MyOptions = {
       zoom: 20,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
   
-    var MyOptions = {
+    var MyOptions1 = {
       zoom: 20,
       center: latlng1,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
   
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-  var map1 = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
-}
+    var map1 = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
+  }
 </script>
     
 </head>
 <body onload="initialize()">
+</script>
     <h3>UNCC Interactive Map</h3>
     <div id="map_canvas" style="width:50%; height:50%"></div>
     <br>
