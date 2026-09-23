@@ -9,57 +9,33 @@
     of fucking up Lab 2.-->
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
   <style type="text/css">
-    html {height: 100% }
-    body {height: 80%; margin: 0px; padding: 40px }
+    html { height: 100% }
+    body { height: 80%; margin: 0px; padding: 40px }
     #map_canvas { height: 50% }
   </style>
-<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
+<script type="text/javascript" 
+  src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
 </script>
 <script type="text/javascript">
   function initialize() {
     
-    var UNCC = new google.maps.LatLng(35.3072442, - 80.7304914);
-    var PINMECH = new google.map.LatLng(35.210780, - 80.864417);
-    var MOUNT = new google.map.LatLng(33.666843, - 84.114728);
-    var GRANDDAD = new google.map.LatLng(33.916925, - 78.018463);
-    var HARP = new google.map.LatLng(53.277090, - 3.066349);
+    var latlng = new google.maps.LatLng(35.3072442, - 80.7304914);
+    var latlng1 = new google.map.LatLng(35.210780, - 80.864417);
   
-    var VUNCC = {
+    var MyOptions = {
       zoom: 20,
-      center: UNCC,
+      center: latlng,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
   
-    var VPINMECH = {
+    var MyOptions = {
       zoom: 20,
-      center: PINMECH,
+      center: latlng1,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
   
-    var VMOUNT = {
-      zoom: 14,
-      center: MOUNT,
-      mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-  
-    var VGRANDDAD = {
-      zoom: 16,
-      center: GRANDDAD,
-      mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-    
-    var VHARP = {
-      zoom: 14,
-      center: HARP,
-      mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-
-  
-  var map = new google.maps.Map(document.getElementById("UNCC_IMAP"), VUNCC);
-  var map1 = new google.maps.Map(document.getElementById("PINMECH_IMAP"), VPINMECH);
-  var map2 = new google.maps.Map(document.getElementById("MOUNT_IMAP"), VMOUNT);
-  var map3 = new google.maps.Map(document.getElementById("GRANDDAD_IMAP"), VGRANDDAD);
-  var map4 = new google.maps.Map(document.getElementById("HARP_IMAP"), VHARP);
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  var map1 = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
 }
 </script>
     
@@ -67,18 +43,9 @@
 <body onload="initialize()">
   </body>
     <h3>UNCC Interactive Map</h3>
-    <div id="VUNCC" style="width:50%; height:50%"></div>
+    <div id="map_canvas" style="width:50%; height:50%"></div>
     <br>
     <h3>Pins Mechcanical I-Map</h3>
-    <div id="VPINMECH" style="width:50%; height:50%"></div>
-    <br>
-    <h3>Arabia Mountain I-Map</h3>
-    <div id="VMOUNT" style="width:50%; height:50%"></div>
-    <br>
-    <h3>Southport I-Map</h3>
-    <div id="VGRANDDAD" style="width:50%; height:50%"></div>
-    <br>
-    <h3>Harp's Inn I-Map</h3>
-    <div id="VHARP" style="width:50%; height:50%"></div>
+    <div id="map_canvas" style="width:50%; height:50%"></div>
     <br>
 </html>
