@@ -18,36 +18,37 @@
 <script type="text/javascript">
   function initialize() {
     
-  var UNCC = new google.maps.LatLng(35.3072442, - 80.7304914);
-  var PINMECH = new google.map.LatLng(35.210780, - 80.864417);
-  var MOUNT = new google.map.LatLng(33.666843, - 84.114728);
-  var GRANDDAD = new google.map.LatLng(33.916925, - -78.018463);
-  var HARP = new google.map.LatLng(53.277090, - 3.066349);
+    var UNCC = new google.maps.LatLng(35.3072442, - 80.7304914);
+    var PINMECH = new google.map.LatLng(35.210780, - 80.864417);
+    var MOUNT = new google.map.LatLng(33.666843, - 84.114728);
+    var GRANDDAD = new google.map.LatLng(33.916925, - -78.018463);
+    var HARP = new google.map.LatLng(53.277090, - 3.066349);
   
-  var VUNCC = {
-    zoom: 20,
+    var VUNCC = {
+      zoom: 20,
       center: UNCC,
-    mapTypeId: google.maps.MapTypeId.HYBRID
-  };
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
   
-  var VPINMECH = {
+    var VPINMECH = {
       zoom: 20,
       center: PINMECH,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
   
-  var VMOUNT = {
+    var VMOUNT = {
       zoom: 14,
       center: MOUNT,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
   
-  var VGRANDDAD = {
+    var VGRANDDAD = {
       zoom: 16,
       center: GRANDDAD,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-  var VHARP = {
+    
+    var VHARP = {
       zoom: 14,
       center: HARP,
       mapTypeId: google.maps.MapTypeId.HYBRID
@@ -55,10 +56,10 @@
 
   
   var map = new google.maps.Map(document.getElementById("UNCC_IMAP"), VUNCC);
-  var map = new google.maps.Map(document.getElementById("PINMECH_IMAP"), VPINMECH);
-  var map = new google.maps.Map(document.getElementById("MOUNT_IMAP"), VMOUNT);
-  var map = new google.maps.Map(document.getElementById("GRANDDAD_IMAP"), VGRANDDAD);
-  var map = new google.maps.Map(document.getElementById("HARP_IMAP"), VHARP);
+  var map1 = new google.maps.Map(document.getElementById("PINMECH_IMAP"), VPINMECH);
+  var map2 = new google.maps.Map(document.getElementById("MOUNT_IMAP"), VMOUNT);
+  var map3 = new google.maps.Map(document.getElementById("GRANDDAD_IMAP"), VGRANDDAD);
+  var map4 = new google.maps.Map(document.getElementById("HARP_IMAP"), VHARP);
 }
 </script>
     
