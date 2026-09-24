@@ -20,32 +20,17 @@
   function initialize() {
     
     var MyOptions = new google.maps.LatLng(35.3072442, -80.7304914);
-    var MyOptions1 = new google.map.LatLng(35.210780, -80.864417);
     var MyOptions = {
       zoom: 20,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-  
-    var MyOptions1 = {
-      zoom: 20,
-      center: latlng1,
-      mapTypeId: google.maps.MapTypeId.HYBRID
-    };
-  
-  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-    var map1 = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
-  }
 </script>
-    
 </head>
 <body onload="initialize()">
 </script>
     <h3>UNCC Interactive Map</h3>
     <div id="map_canvas" style="width:50%; height:50%"></div>
-    <br>
-    <h3>Pins Mechcanical I-Map</h3>
-    <div id="map_canvas1" style="width:50%; height:50%"></div>
     <br>
 </body>
 </html>
