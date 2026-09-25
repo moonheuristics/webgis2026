@@ -3,27 +3,31 @@
 <title> Lab 2 WEBGIS</title>
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <style type="text/css">
-  html {height:100%}
-  body {height:80%; margin:0px; padding:40px}
-  #map_canvas {height: 50%}
+  html { height: 100% }
+  body { height: 80%; margin: 0px; padding: 40px }
+  #map_canvas { height: 50% }
 </style>
 <script type="text/javascript" 
   src="https://maps.google.com/maps/api/js?sensor=false&key=AIzaSyBxZzW4FimuerfWAaz8xIbmLKKc8uCIGI4">
 </script>
-  
-<script type+"text/javascript">
-  function initialize()
-{
-  var UNI = new google.maps.LatLng(35.307244, -80.730491);
-  var VUNCC = {
-    zoom: 16,
-    center: UNI,
-    mapTypeId: google.maps.MapTypeId.HYBRID
-  };
-  var map = new google.maps.Map(document.getElementById("UNCC_CAMPUS"), VUNCC);
-}
+<script type="text/javascript">
+  function initialize() {
+    var latlng = new google.maps.LatLng(35.3072442, -80.7304914);
+    var latlng1 = new google.maps.LatLng(36.3072442, -80.7304914);
+    var myOptions = {
+      zoom: 20,
+      center: latlng,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    }; 
+    var myOptions1 = {
+      zoom: 20,
+      center: latlng1,
+      mapTypeId: google.maps.MapTypeId.HYBRID
+    };
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var map = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
+  }
 </script>
- 
 </head>
 <body onload="initialize()">
 <h1> Lab 2 for Web GIS </h1>
@@ -87,14 +91,8 @@ function prod(arr) {
 <br>
   
 <h3>General UNCC Campus</h3>
-<div id="UNCC_CAMPUS" style="width:50%; height:50%"></div>
+<div id="map_canvas" style="width:50%; height:50%"></div>
 <h3><i>Map of Pins Mechcanical, Charlotte, NC, USA</i> | hybrid</h3>
-<div id="PIN_MECH" style="width:50%; height:50%"></div>
+<div id="map_canvas1" style="width:50%; height:50%"></div>
 <h3><i>Map of Stone and Arabia Mountain, AT, USA | terrain</i></h3>
-<div id="MOUNT" style="width:50%; height:50%"></div>
-<h3><i>Map of Southport, NC, USA</i> | hybrid</h3>
-<div id="GRANDDAD" style="width:50%; height:50%"></div>
-<h3><i>The Harp Inn, Little Neston, UK</i> | hybrid</h3> 
-<div id="HARP" style="width:50%; height:50%"></div>
-</body>
 </html>
