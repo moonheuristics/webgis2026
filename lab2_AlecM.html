@@ -12,20 +12,23 @@
 </script>
 <script type="text/javascript">
   function initialize() {
-    var UNCC = new google.maps.LatLng(50.3072442, -90.7304914);
-    var latlng1 = new google.maps.LatLng(36.3072442, -80.7304914);
+    var COORD_UNCC = new google.maps.LatLng(50.3072442, -90.7304914);
+    var COORD_PINMECH = new google.maps.LatLng(36.3072442, -80.7304914);
+    var COORD_MOUNT = new google.maps.LatLng(,);
+    var COORD_GRAND = new google.maps.LatLng(,);
+    var COORD_HARP = new google.maps.LatLng(,);
     var VUNCC = {
       zoom: 20,
-      center: UNCC,
+      center: COORD_UNCC,
       mapTypeId: google.maps.MapTypeId.HYBRID
     }; 
-    var myOptions1 = {
+    var VPINMECH = {
       zoom: 20,
-      center: latlng1,
+      center: COORD_PINMECH,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
     var map = new google.maps.Map(document.getElementById("IUNCC"), VUNCC);
-    var map = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
+    var map = new google.maps.Map(document.getElementById("IPINMECH"), VPINMECH);
   }
 </script>
 </head>
@@ -93,6 +96,6 @@ function prod(arr) {
 <h3>General UNCC Campus</h3>
 <div id="IUNCC" style="width:50%; height:50%"></div>
 <h3><i>Map of Pins Mechcanical, Charlotte, NC, USA</i> | hybrid</h3>
-<div id="map_canvas1" style="width:50%; height:50%"></div>
+<div id="IPINMECH" style="width:50%; height:50%"></div>
 <h3><i>Map of Stone and Arabia Mountain, AT, USA | terrain</i></h3>
 </html>
