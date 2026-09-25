@@ -12,11 +12,11 @@
 </script>
 <script type="text/javascript">
   function initialize() {
-    var COORD_UNCC = new google.maps.LatLng(50.3072442, -90.7304914);
-    var COORD_PINMECH = new google.maps.LatLng(36.3072442, -80.7304914);
-    var COORD_MOUNT = new google.maps.LatLng(,);
-    var COORD_GRAND = new google.maps.LatLng(,);
-    var COORD_HARP = new google.maps.LatLng(,);
+    var COORD_UNCC = new google.maps.LatLng(35.307244, -80.730491);
+    var COORD_PINMECH = new google.maps.LatLng(35.120780, -80.864417);
+    var COORD_MOUNT = new google.maps.LatLng(33.666843, -84.114729);
+    var COORD_GRAND = new google.maps.LatLng(33.916925, -78.018463);
+    var COORD_HARP = new google.maps.LatLng(53.277090, -3.066343);
     var VUNCC = {
       zoom: 20,
       center: COORD_UNCC,
@@ -27,8 +27,26 @@
       center: COORD_PINMECH,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-    var map = new google.maps.Map(document.getElementById("IUNCC"), VUNCC);
-    var map = new google.maps.Map(document.getElementById("IPINMECH"), VPINMECH);
+    var VMOUNT = {
+      zoom: 14,
+      center: COORD_MOUNT,
+      mapTypeId: google.maps.MaptypeId.TERRAIN
+    };
+    var VGRAND = {
+      zoom: 16,
+      center: COORD_GRAND,
+      mapTypeId: google.maps.MaptypeId.HYBRID
+    };
+    var VHARP = {
+      zoom: 14,
+      center: COORD_HARP,
+      mapTypeId: google.maps,MaptypeId.HYBRID
+  };
+  var map = new google.maps.Map(document.getElementById("IUNCC"), VUNCC);
+  var map = new google.maps.Map(document.getElementById("IPINMECH"), VPINMECH);
+  var map = new google.maps.Map(document.getElementById("IMOUNT"), VMOUNT);
+  var map = new google.maps.Map(document.getElementById("IGRAND"), VGRAND);
+  var map = new google.maps.Map(document.getElementById("IHARP"), VHARP);
   }
 </script>
 </head>
@@ -98,4 +116,8 @@ function prod(arr) {
 <h3><i>Map of Pins Mechcanical, Charlotte, NC, USA</i> | hybrid</h3>
 <div id="IPINMECH" style="width:50%; height:50%"></div>
 <h3><i>Map of Stone and Arabia Mountain, AT, USA | terrain</i></h3>
+<div id="IMOUNT" style="width:50%; height:50%"></div>
+<div id="IGRAND" style="width:50%; height:50%"></div>
+<div id="IHARP" style="width:50%; height:50%"></div>
+</body>
 </html>
