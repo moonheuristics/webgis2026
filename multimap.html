@@ -17,13 +17,20 @@ of fucking up Lab 2. This is my ~40th implamentation and 6th full rewrite-->
 </script>
 <script type="text/javascript">
   function initialize() {
-    var latlng = new google.maps.LatLng(35.3072442, -80.7304914); 
+    var latlng = new google.maps.LatLng(35.3072442, -80.7304914);
+    var latlng1 = new google.maps.LatLng(36.3072442, -80.7304914);
     var myOptions = {
       zoom: 20,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.HYBRID
+    }; 
+    var myOptions1 = {
+      zoom: 20,
+      center: latlng1,
+      mapTypeId: google.maps.MapTypeId.HYBRID
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions1);
   }
 </script>
 </head>
@@ -31,6 +38,6 @@ of fucking up Lab 2. This is my ~40th implamentation and 6th full rewrite-->
 <h3>UNCC Interactive Map</h3>
 <div id="map_canvas" style="width:50%; height:50%"></div>
 <h3>bullshit town</h3>
-<div id="map_canvas" style="width:50%; height:50%"></div>
+<div id="map_canvas1" style="width:50%; height:50%"></div>
 </body>
 </html>
