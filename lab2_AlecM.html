@@ -15,40 +15,12 @@
   function initialize()
 {
   var UNI = new google.maps.LatLng(35.307244, -80.730491);
-  var PIN = new google.maps.LatLng(35.210780, -80.864417);
-  var ARA = new google.maps.LatLng(33.666843, -84.114729);
-  var GRA = new google.maps.LatLng(33.916925, -78.018463);
-  var HAR = new google.maps.LatLng(53.277090, -3.066343);
   var VUNCC = {
     zoom: 16,
     center: UNI,
     mapTypeId: google.maps.MapTypeId.HYBRID
   };
-  var VPINMECH = {
-    zoom: 20,
-    center: PIN,
-    mapTypeId: google.maps.MapTypeId.HYBRID
-  };
-  var VMOUNT = {
-    zoom:14,
-    center: ARA,
-    mapTypeId: google.maps.MapTypeId.TERRAIN
-  };
-  var VGRAND = {
-    zoom:16,
-    center: GRA,
-    mapTypeId: google.maps.MapTypeId.HYBRID
-  };
-  var VHARP = {
-    zoom:  4,
-    center: HAR,
-    mapTypeId: google.maps.MapTypeId.Hybrid
-  };
   var map = new google.maps.Map(document.getElementById("UNCC_CAMPUS"), VUNCC);
-  var map = new google.maps.Map(document.getElementById("PIN_MECH"), VPINMECH);
-  var map = new google.maps.Map(document.getElementById("MOUNT"), VMOUNT);
-  var map = new google.maps.Map(document.getElementById("GRANDDAD", VGRAND);
-  var map = new google.maps.Map(document.getElementById("HARP"), VHARD);
 }
 </script>
  
