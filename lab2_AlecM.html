@@ -12,11 +12,11 @@
 </script>
 <script type="text/javascript">
   function initialize() {
-    var latlng = new google.maps.LatLng(35.3072442, -80.7304914);
+    var UNCC = new google.maps.LatLng(35.3072442, -80.7304914);
     var latlng1 = new google.maps.LatLng(36.3072442, -80.7304914);
-    var myOptions = {
+    var VUNCC = {
       zoom: 20,
-      center: latlng,
+      center: UNCC,
       mapTypeId: google.maps.MapTypeId.HYBRID
     }; 
     var myOptions1 = {
@@ -24,7 +24,7 @@
       center: latlng1,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    var map = new google.maps.Map(document.getElementById("IUNCC"), VUNCC);
     var map = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
   }
 </script>
@@ -91,7 +91,7 @@ function prod(arr) {
 <br>
   
 <h3>General UNCC Campus</h3>
-<div id="map_canvas" style="width:50%; height:50%"></div>
+<div id="IUNCC" style="width:50%; height:50%"></div>
 <h3><i>Map of Pins Mechcanical, Charlotte, NC, USA</i> | hybrid</h3>
 <div id="map_canvas1" style="width:50%; height:50%"></div>
 <h3><i>Map of Stone and Arabia Mountain, AT, USA | terrain</i></h3>
