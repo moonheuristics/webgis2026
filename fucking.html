@@ -17,22 +17,29 @@
     var latlng = new google.maps.LatLng(24.556128921896406, -81.78972679138121);
 	var latlng1 = new google.maps.LatLng(0, -80.73200);
 	var latlng2 = new google.maps.LatLng(60, -80.73200);
+	var latlng3 = new google.maps.LatLng(40, 60)
     var myOptions = {
       zoom: 16,
       center: latlng,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
-	var myOptions2 = {
+	var myOptions1 = {
       zoom: 6,
       center: latlng1,
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };
-	var myOptions3 = {
+	var myOptions2 = {
       zoom: 12,
       center: latlng2,
       mapTypeId: google.maps.MapTypeId.SATELLITE
     };
+	  var myOptions3 = {
+		  zoom: 6,
+		  center: latlng3,
+		  mapTypeId: google.maps.MapTypeId.SATELLITE
+	  };
   var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+	var map = google.maps.map(document.getElementById("map_canvas1"), myOptions1);
 	var map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions2);
 	var map3 = new google.maps.Map(document.getElementById("map_canvas3"), myOptions3);
   }
@@ -43,7 +50,7 @@
 <div id="map_canvas" style="width:20%; height:20%"></div> 
 <br>
 <h3>Google Map Example 1: </h3>
-<div id="map_canvas2" style="width:50%; height:50%"></div> 
+<div id="map_canvas1" style="width:50%; height:50%"></div> 
 <br>
 <h3>Google Map Example 2: </h3>
 <div id="map_canvas2" style="width:50%; height:50%"></div> 
