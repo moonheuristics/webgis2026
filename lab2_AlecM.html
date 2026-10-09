@@ -42,11 +42,11 @@
       center: latlng4,
       mapTypeId: google.maps,MaptypeId.HYBRID
   };
-  var map = new google.maps.Map(document.getElementById("IUNCC"), myOptions);
-  var map1 = new google.maps.Map(document.getElementById("IPINMECH"), myOptions1);
-  var map2 = new google.maps.Map(document.getElementById("IMOUNT"), myOptions2);
-  var map3 = new google.maps.Map(document.getElementById("IGRAND"), myOptions3);
-  var map4 = new google.maps.Map(document.getElementById("IHARP"), myOptions4);
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  var map1 = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
+  var map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions2);
+  var map3 = new google.maps.Map(document.getElementById("map_canvas3"), myOptions3);
+  var map4 = new google.maps.Map(document.getElementById("map_canvas4"), myOptions4);
   }
 </script>
 </head>
@@ -112,12 +112,12 @@ function prod(arr) {
 <br>
   
 <h3>General UNCC Campus</h3>
-<div id="IUNCC" style="width:50%; height:50%"></div>
+<div id="map_canvas" style="width:50%; height:50%"></div>
 <h3><i>Map of Pins Mechcanical, Charlotte, NC, USA</i> | hybrid</h3>
-<div id="IPINMECH" style="width:50%; height:50%"></div>
+<div id="map_canvas1" style="width:50%; height:50%"></div>
 <h3><i>Map of Stone and Arabia Mountain, AT, USA | terrain</i></h3>
-<div id="IMOUNT" style="width:50%; height:50%"></div>
-<div id="IGRAND" style="width:50%; height:50%"></div>
-<div id="IHARP" style="width:50%; height:50%"></div>
+<div id="map_canvas2" style="width:50%; height:50%"></div>
+<div id="map_canvas3" style="width:50%; height:50%"></div>
+<div id="map_canvas4" style="width:50%; height:50%"></div>
 </body>
 </html>
