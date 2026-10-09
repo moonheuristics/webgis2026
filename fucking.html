@@ -14,13 +14,13 @@
 <script type="text/javascript">
   function initialize() {
     //var latlng = new google.maps.LatLng(35.306840, -80.73200);
-    var COORD_UNCC = new google.maps.LatLng(24.556128, -81.789726);
+    var latlng = new google.maps.LatLng(24.556128, -81.789726);
 	var latlng1 = new google.maps.LatLng(24.556128, -81.789726);
 	var latlng2 = new google.maps.LatLng(24.556128, -81.789726);
 	var latlng3 = new google.maps.LatLng(24.556128, -81.789726);
-    var VUNCC = {
+    var myOptions = {
       zoom: 16,
-      center: COORD_UNCC,
+      center: latlng,
       mapTypeId: google.maps.MapTypeId.HYBRID
     };
 	var myOptions1 = {
@@ -38,7 +38,7 @@
 		center: latlng3, 
 		mapTypeId: google.maps.MapTypeId.SATELLITE
 	};
-  var map = new google.maps.Map(document.getElementById("IUNCC"), VUNCC);
+  var map = new google.maps.Map(document.getElementById("map_canvas"), MyOptions);
   var map1 = new google.maps.Map(document.getElementById("map_canvas1"), myOptions1);
   var map2 = new google.maps.Map(document.getElementById("map_canvas2"), myOptions2);
   var map3 = new google.maps.Map(document.getElementById("map_canvas3"), myOptions3);
