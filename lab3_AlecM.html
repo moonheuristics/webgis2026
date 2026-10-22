@@ -16,6 +16,25 @@
     var longitude=-80.73200;
     var latlong=ol.proj.fromLonLat([longitude,latitude]);
     var zoomLevel=4;
+    var osm = new ol.layer.Tile({
+      title: 'OpenStreetMap',
+      type: 'base',
+      visible: true,
+      source: new ol.source.OSM()
+    });
+
+    var map = new ol.Map({
+      target: 'map',
+      layers: [basegroup],
+      view: new ol.View({
+      center: latlong,
+      zoom: zoomLevel
+      })
+    });
+    var layerSwitcher = new ol.control.LayerSwitcher({
+      tipLabel: 'Legend'
+    });
+map.addControl(layerSwitcher);
   </script>
 </body>
 </html>
