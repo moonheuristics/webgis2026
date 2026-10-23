@@ -23,11 +23,9 @@
       visible: true,
       source: new ol.source.OSM()
     });
-    basegroup.getLayers().push(osm);
-    
     var map = new ol.Map({
       target: 'map',
-      layers: [osm]
+      layers: [osm],
       view: new ol.View({
         center: latlong,
         zoom: zoomLevel
