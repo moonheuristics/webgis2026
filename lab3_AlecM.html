@@ -23,9 +23,21 @@
       visible: true,
       source: new ol.source.OSM()
     });
+    basegroup.getLayers().push(osm);
+
+    var googlemap = new ol.layer.Tile({
+      title: 'Google Map',
+      type: 'base',
+      visible: true,
+      source: new ol.source.XYZ({
+        url: `https://mt{0-3}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&key=AIzaSyA1IY1QaM_3gcdAOzSD0kydkjyMSzhJIMg`
+      })
+    });
+basegroup.getLayers().push(googlemap);
+    
     var map = new ol.Map({
       target: 'map',
-      layers: [osm],
+      layers: [osm], [googlemap],
       view: new ol.View({
         center: latlong,
         zoom: zoomLevel
