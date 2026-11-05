@@ -4,7 +4,8 @@
 	 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
-	 
+	 <!--for the bulk of my time working on this assignment and last assignment I used W3schools which I can only assume that there was something wrong with the spacing when writing 
+	and pasting in things with in the website. Not to say it was a bad resource, but it made it impossible to untangle bad loops/spacings. -->
 	  <!-- There was an issue with this code when I was writing it down, and it was virtually indistingushable from this below. How in the world were you supposed to diagonse that? -->
 	<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
@@ -18,7 +19,7 @@
   
 <body>
 	<h3>Chapter 7: Web-based Mapping Using Leaflet</h3>
-	<h4>Author: YOUR NAME HERE</h4>
+	<h4>Author: Alec M</h4>
     <div id="map" class="map", style = "width:100%; height: 100%"></div>
 	<script>
 		//based on https://leafletjs.com/examples/quick-start/
@@ -50,7 +51,22 @@
       		format: 'image/png',
       		transparent: true,
       		attribution: '&copy; NLCD WMS'
-    	}).addTo(map); 
+    	}).addTo(map);
+		
+		// Fetch and add GeoJSON layers from URLs (using Fetch API)
+        fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json')  // Replace with actual URL
+            .then(response => response.json())
+            .then(data => {
+                geojsonLayer1 = L.geoJSON(data).addTo(map);  // Add the first GeoJSON layer
+                layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");  // Add to layer control
+            });
+
+        fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')  // Replace with actual URL
+            .then(response => response.json())
+            .then(data => {
+                geojsonLayer2 = L.geoJSON(data).addTo(map);  // Add the second GeoJSON layer
+                layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");  // Add to layer control
+            });
         
     	layerControl.addBaseLayer(osm,"OpenStreetMap");
 		layerControl.addBaseLayer(google,"Google Map");
