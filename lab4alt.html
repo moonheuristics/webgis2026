@@ -39,7 +39,7 @@
    		 });
         
   	  	var elevationWMS = L.tileLayer.wms('https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', {
-  	  		layers: '3DEPElevation:Hillshade Elevation Tinted',  // The layer you want to display from the WMS (e.g., '0' for first layer)
+  	  		layers: '3DEPElevation:Hillshade Elevation Tinted',  // The layer you want to display from the WMS (e.g., '0' for first layer) <- I don't understand what this means. I tried to follow the link and it just said "Access Denied." so dead end.
       		format: 'image/png',
       		transparent: true,
       		attribution: '&copy; ArcGIS WMS'
@@ -70,8 +70,8 @@
         
     	layerControl.addBaseLayer(osm,"OpenStreetMap");
 		layerControl.addBaseLayer(google,"Google Map");
-        // what happens when you make addOverlay into addBaseLayer?
-    	layerControl.addBaseLayer(elevationWMS,"Elevation (WMS)");
+        // (what happens when you make addOverlay into addBaseLayer? Result: It just switches postion to baselayer. Helpful info, but not helpful by itself.)
+    	layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
     	layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
         
 	</script>
