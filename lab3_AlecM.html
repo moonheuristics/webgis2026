@@ -19,7 +19,7 @@
 
     var basegroup = new ol.layer.Group({
       'title': 'Base Maps',
-      layer: []
+      layers: []
     });
     
     var osm = new ol.layer.Tile({
@@ -32,7 +32,7 @@
     
     var map = new ol.Map({
       target: 'map',
-      layers: [basegroup]
+      layers: [basegroup],
       view: new ol.View({
         center: latlong,
         zoom: zoomLevel
