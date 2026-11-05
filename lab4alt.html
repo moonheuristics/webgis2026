@@ -32,31 +32,31 @@
 			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 		}).addTo(map);
 		
-    var google = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-      maxZoom: 20,
-      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-    });
+    	var google = L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+     	 	maxZoom: 20,
+    	  	subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+   		 });
         
-    var elevationWMS = L.tileLayer.wms('https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', {
-      layers: '3DEPElevation:Hillshade Elevation Tinted',  // The layer you want to display from the WMS (e.g., '0' for first layer)
-      format: 'image/png',
-      transparent: true,
-      attribution: '&copy; ArcGIS WMS'
-    }).addTo(map);
+  	  	var elevationWMS = L.tileLayer.wms('https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', {
+  	  		layers: '3DEPElevation:Hillshade Elevation Tinted',  // The layer you want to display from the WMS (e.g., '0' for first layer)
+      		format: 'image/png',
+      		transparent: true,
+      		attribution: '&copy; ArcGIS WMS'
+    	}).addTo(map);
 		
 		//https://www.mrlc.gov/data-services-page
 		var landcoverWMS = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/NLCD_2021_Land_Cover_L48/wms?', {
-      layers: 'NLCD_2021_Land_Cover_L48',  // The layer you want to display from the WMS (e.g., '0' for first layer)
-      format: 'image/png',
-      transparent: true,
-      attribution: '&copy; NLCD WMS'
-    }).addTo(map); 
+      		layers: 'NLCD_2021_Land_Cover_L48',  // The layer you want to display from the WMS (e.g., '0' for first layer)
+      		format: 'image/png',
+      		transparent: true,
+      		attribution: '&copy; NLCD WMS'
+    	}).addTo(map); 
         
-    layerControl.addBaseLayer(osm,"OpenStreetMap");
+    	layerControl.addBaseLayer(osm,"OpenStreetMap");
 		layerControl.addBaseLayer(google,"Google Map");
         
-    layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
-    layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
+    	layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
+    	layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
         
 	</script>
 </body>
