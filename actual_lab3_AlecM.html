@@ -61,13 +61,23 @@
 
     var wms2 = new ol.layer.Tile({
       title: 'Land Cover',
-        source: new ol.source.TileWMS({
-          url: 'https://www.mrlc.gov/geoserver/mrlc_display/NLCD_2021_Land_Cover_L48/wms',
-          params: {'LAYERS': 'NLCD_2021_Land_Cover_L48', 'TILED': true},
-          transition: 0
-        })
+      source: new ol.source.TileWMS({
+        url: 'https://www.mrlc.gov/geoserver/mrlc_display/NLCD_2021_Land_Cover_L48/wms',
+        params: {'LAYERS': 'NLCD_2021_Land_Cover_L48', 'TILED': true},
+        transition: 0
+      })
     });
     overlaygroup.getLayers().push(wms2);
+
+    var wms3 = new ol.layer.Tile({
+      title: 'Floodplain Relisience',
+      source: new ol.source.TileWMS({
+        url: 'https://services.nconemap.gov/secure/services/Floodplain_Resilience/ImageServer/WMSServer?request=GetCapabilities&service=WMS',
+        params: {'LAYERS': 'Floodplain_Resilience_RFT', 'TILED': true},
+        transition: 0
+      })
+    });
+    overlaygroup.getLayers().push(wms3);        
 
     var geojsonSource1 = new ol.source.Vector({
       url:'https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json',
