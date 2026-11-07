@@ -104,8 +104,11 @@
           stroke: new ol.style.Stroke({
             color: 'black',
             width: 1
-    }) }) }) });
-    overlaygroup.getLayers().push(geojsonLayers2);
+          })
+        })
+      })
+    });
+    overlaygroup.getLayers().push(geojsonLayer2);
 
     var map = new ol.Map({
       target: 'map',
