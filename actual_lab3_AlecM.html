@@ -120,9 +120,10 @@
     var geojsonLayer3 = new ol.layer.Raster({
       title: 'Floodplain Resilience',
       source: geojsonSource3,
-      style:polygonStyle
+      style: polygonStyle
     });
-
+    overlayergroup.getLayers().push(geojsonLayer3);
+    
     var map = new ol.Map({
       target: 'map',
       layers: [basegroup,overlaygroup],
