@@ -67,17 +67,7 @@
         transition: 0
       })
     });
-    overlaygroup.getLayers().push(wms2);
-
-    var wms3 = new ol.layer.Tile({
-      title: 'Floodplain Relisience',
-      source: new ol.source.TileWMS({
-        url: 'https://services.nconemap.gov/secure/services/Floodplain_Resilience/ImageServer/WMSServer?request=GetCapabilities&service=WMS',
-        params: {'LAYERS': 'Floodplain_Resilience_RFT', 'TILED': true},
-        transition: 0
-      })
-    });
-    overlaygroup.getLayers().push(wms3);        
+    overlaygroup.getLayers().push(wms2); 
 
     var geojsonSource1 = new ol.source.Vector({
       url:'https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json',
@@ -89,6 +79,11 @@
       format: new ol.format.GeoJSON()
     });
 
+    var geojsonSource3 = new ol.source.Vector({
+      url:'https://services.nconemap.gov/secure/rest/services/Floodplain_Resilience/ImageServer?f=pjson',
+      format: new ol.format.GeoJSON()
+    });
+    
     var polygonStyle = new ol.style.Style({
       fill: new ol.style.Fill({
         color: 'rgba(0,0,0,0)'
@@ -121,6 +116,12 @@
       })
     });
     overlaygroup.getLayers().push(geojsonLayer2);
+
+    var geojsonLayer3 = new ol.layer.Raster({
+      title: 'Floodplain Resilience',
+      source: geojsonSource3,
+      style:polygonStyle
+    });
 
     var map = new ol.Map({
       target: 'map',
