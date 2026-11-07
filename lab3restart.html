@@ -30,7 +30,11 @@
       'title': 'Overlay',
       layers:[]
     });
-
+    
+    var layerSwitcher = new ol.control.LayerSwitcher({
+      tipLabel: 'Legend'
+    });
+    
     var osm = new ol.layer.Tile({
       title: 'OpenStreetMap',
       type: 'base',
@@ -121,9 +125,7 @@
       })
     });
 
-    var layerSwitcher = new ol.control.LayerSwitcher({
-      tipLabel: 'Legend'
-    });
+
     map.addControl(layerSwitcher);
   </script>
 </body>
