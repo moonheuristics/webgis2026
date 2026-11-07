@@ -12,7 +12,6 @@
   <h4>Author:Alec M.</h4>
   <div id="map" class="map", style = "width:100%; height:100%"></div>
   <!--Note: Everything till 7.2.3 is correct-->
-  <!--halfway thru 7.2.4-->
   <script>
   //setting location perameters
     var latitude=35.306840;
@@ -73,6 +72,11 @@
       format: new ol.format.GeoJSON()
     });
 
+    var geojsonSource2 = new ol.source.Vector({
+      url: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson',
+      format: new ol.format.GeoJSON()
+    });
+
     var polygonStyle = new ol.style.Style({
       fill: new ol.style.Fill({
         color: 'rgba(0,0,0,0)'
@@ -89,6 +93,19 @@
       style:polygonStyle
     });
     overlaygroup.getLayers().push(geojsonLayer1);
+
+    var geojsonLayer2 = new ol.layer.Vector({
+      title: 'Earthquake',
+      source: geojsonSource2,
+      style: new ol.style.Style({
+        image: new ol.style.Circle({
+          radius: 5,
+          fill: new ol.style.Fill({color:'red'}),
+          stroke: new ol.style.Stroke({
+            color: 'black',
+            width: 1
+    }) }) }) });
+    overlaygroup.getLayers().push(geojsonLayers2);
 
     var map = new ol.Map({
       target: 'map',
