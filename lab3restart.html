@@ -11,7 +11,7 @@
   <h3>Chapter 7: Web-based Mapping using OpenLayers</h3>
   <h4>Author:Alec M.</h4>
   <div id="map" class="map", style = "width:100%; height:100%"></div>
-  
+  <!--Note: Everything till 7.2 is correct-->
   <script>
   //setting location perameters
     var latitude=35.306840;
@@ -32,6 +32,16 @@
     });
     basegroup.getLayers().push(osm);
 
+    var googlemap = new ol.layer.Tile({
+      title: 'Google Map',
+      type: 'base',
+      visible: true,
+      source: new ol.source.XYZ({
+        url:'https://mt{0-3}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&key=AIzaSyB5U-lTv1hoJo_-ON8qVBXtEGXfZI80S7k'
+        })
+    });
+    basegroup.getLayers().push(googlemap);
+    
     var map = new ol.Map({
       target: 'map',
       layers: [basegroup],
