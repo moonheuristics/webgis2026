@@ -12,6 +12,7 @@
   <h4>Author:Alec M.</h4>
   <div id="map" class="map", style = "width:100%; height:100%"></div>
   <!--Note: Everything till 7.2.3 is correct-->
+  <!--halfway thru 7.2.4-->
   <script>
   //setting location perameters
     var latitude=35.306840;
@@ -66,6 +67,28 @@
         })
     });
     overlaygroup.getLayers().push(wms2);
+
+    var geojsonSource1 = new ol.source.Vector({
+      url:'https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json',
+      format: new ol.format.GeoJSON()
+    });
+
+    var polygonStyle = new ol.style.Style({
+      fill: new ol.style.Fill({
+        color: 'rgba(0,0,0,0)'
+      }),
+        stroke: new ol.style.Stroke({
+          color:'#B00B69',
+          width: 2
+        })
+    });
+
+    var geojsonLayer1 = new ol.layer.Vector({
+      title: 'US States',
+      source: geojsonSource1,
+      style:polygonStyle
+    });
+    overlaygroup.getLayers().push(geojsonLayer1);
 
     var map = new ol.Map({
       target: 'map',
