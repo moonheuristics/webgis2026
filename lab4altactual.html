@@ -47,14 +47,15 @@ fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/mast
   .then(data => {
     geojsonLayer = L.geoJSON(data).addTo(map);
     layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");
-  });
+    });
 
 fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
   .then(responce => response.json())
   .then(data => {
-    geojsonLayer = L.geojson(data).addTo(map);
+    geojsonLayer2 = L.geoJSON(data).addTo(map);
     layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
-  });
+    });
+    
     
 layerControl.addBaseLayer(osm,"OpenStreetMap");
 layerControl.addBaseLayer(google,"Google map");
