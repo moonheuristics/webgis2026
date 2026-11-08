@@ -78,6 +78,7 @@
       })
     });
     overlaygroup.getLayers().push(wms3); 
+    //'https://services.nconemap.gov/secure/rest/services/Floodplain_Resilience/ImageServer'
 
     var geojsonSource1 = new ol.source.Vector({
       url:'https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json',
@@ -86,11 +87,6 @@
 
     var geojsonSource2 = new ol.source.Vector({
       url: 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson',
-      format: new ol.format.GeoJSON()
-    });
-
-    var geojsonSource3 = new ol.source.Vector({
-      url:'https://services.nconemap.gov/secure/rest/services/Floodplain_Resilience/ImageServer?f=pjson',
       format: new ol.format.GeoJSON()
     });
     
