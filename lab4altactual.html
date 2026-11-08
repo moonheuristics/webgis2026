@@ -13,56 +13,49 @@
   <script>
 //based on https://leafletjs.com/examples/quick-start/
 //verified up till 7.3.3
-var latlng=[35.306840,-80.73200];
-var zoomLevel=3;
-var map = L.map('map').setView(latlng, zoomLevel);
-var layerControl= L.control.layers(null, null, {collasped: false }).addTo(map);
-
-var osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-var google = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-  maxZoom: 20,
-  subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-});
+    var latlng=[35.306840,-80.73200];
+    var zoomLevel=3;
+    var map = L.map('map').setView(latlng, zoomLevel);
+    var layerControl= L.control.layers(null, null, {collasped: false }).addTo(map);
     
-var elevationWMS = L.tileLayer.wms('https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', {
-  layers:'3DEPElevation:Hillshade Elevation Tinted',
-  format: 'image/png',
-  transparent: true,
-  attributuion: '&copy; ArcGIS WMS'
-}).addTo(map);
+    var osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
     
-var landcoverWMS = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/NLCD_2021_Land_Cover_L48/wms?', {
-  layers: 'NLCD_2021_Land_Cover_L48',
-  format: 'image/png',
-  transparent: true,
-  attribution: '&copy; NLCD WMS'
-}).addTo(map);
-
-fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json')
-  .then(response => response.json())
-  .then(data => {
-    geojsonLayer = L.geoJSON(data).addTo(map);
-    layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");
-  });
-
-fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
-  .then(responce => response.json())
-  .then(data => {
-    geojsonLayer2 = L.geoJSON(data).addTo(map);
-    layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
-  });
+    var google = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+      maxZoom: 20,
+      subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+    });
     
-    
-layerControl.addBaseLayer(osm,"OpenStreetMap");
-layerControl.addBaseLayer(google,"Google map");
-layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
-layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
-
-</script>
-
+    var elevationWMS = L.tileLayer.wms('https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', {
+      layers:'3DEPElevation:Hillshade Elevation Tinted',
+      format: 'image/png',
+      transparent: true,
+      attributuion: '&copy; ArcGIS WMS'
+    }).addTo(map);
+    var landcoverWMS = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/NLCD_2021_Land_Cover_L48/wms?', {
+      layers: 'NLCD_2021_Land_Cover_L48',
+      format: 'image/png',
+      transparent: true,
+      attribution: '&copy; NLCD WMS'
+    }).addTo(map);
+    fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json')
+      .then(response => response.json())
+      .then(data => {
+        geojsonLayer = L.geoJSON(data).addTo(map);
+        layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");
+      });
+    fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
+      .then(responce => response.json())
+      .then(data => {
+        geojsonLayer2 = L.geoJSON(data).addTo(map);
+        layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
+      });
+    layerControl.addBaseLayer(osm,"OpenStreetMap");
+    layerControl.addBaseLayer(google,"Google map");
+    layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
+    layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
+  </script>
 </body>
 </html>
