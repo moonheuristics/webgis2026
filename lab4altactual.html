@@ -16,12 +16,12 @@
 var latlng=[35.306840,-80.73200];
 var zoomLevel=3;
 var map = L.map('map').setView(latlng, zoomLevel);
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+var layerControl= L.control.layers(null, null, {collasped: false }).addTo(map);
+
+var osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   maxZoom: 19,
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
-    
-var layerControl= L.control.layers(null, null, {collasped: false }).addTo(map);
 
 var google = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
   maxZoom: 20,
