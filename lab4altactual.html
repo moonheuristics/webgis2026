@@ -38,26 +38,31 @@
       transparent: true,
       attributuion: '&copy; ArcGIS WMS'
     }).addTo(map);
+    
     var landcoverWMS = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/NLCD_2021_Land_Cover_L48/wms?', {
       layers: 'NLCD_2021_Land_Cover_L48',
       format: 'image/png',
       transparent: true,
       attribution: '&copy; NLCD WMS'
     }).addTo(map);
+    
     fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json')
       .then(response => response.json())
       .then(data => {
         geojsonLayer = L.geoJSON(data).addTo(map);
         layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");
       });
+    
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
       .then(responce => response.json())
       .then(data => {
         geojsonLayer2 = L.geoJSON(data).addTo(map);
         layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
       });
+    
     layerControl.addBaseLayer(osm,"OpenStreetMap");
     layerControl.addBaseLayer(google,"Google map");
+    
     layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
     layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
   </script>
