@@ -21,6 +21,13 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
     
+var layerControl= L.control.layers(null, null, {collasped: false }).addTo(map);
+
+var google = L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+  maxZoom: 20,
+  subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
+});
+    
 var elevationWMS = L.tileLayer.wms('https://elevation.nationalmap.gov/arcgis/services/3DEPElevation/ImageServer/WMSServer', {
   layers:'3DEPElevation:Hillshade Elevation Tinted',
   format: 'image/png',
@@ -34,6 +41,9 @@ var landcoverWMS = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/
   transparent: true,
   attribution: '&copy; NLCD WMS'
 }).addTo(map);
+
+layerControl.addBaseLayer(osm,"OpenStreetMap");
+layerControl.addBaseLayer(google,"Google map");
 layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
 LayerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
 
