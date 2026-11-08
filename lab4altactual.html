@@ -12,7 +12,7 @@
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
   <script>
 //based on https://leafletjs.com/examples/quick-start/
-//verified up till 7.3.2
+//verified up till 7.3.3
 var latlng=[35.306840,-80.73200];
 var zoomLevel=3;
 var map = L.map('map').setView(latlng, zoomLevel);
@@ -42,6 +42,20 @@ var landcoverWMS = L.tileLayer.wms('https://www.mrlc.gov/geoserver/mrlc_display/
   attribution: '&copy; NLCD WMS'
 }).addTo(map);
 
+fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json')
+  .then(response => response.json())
+  .then(data => {
+    geojsonLayer = L.geoJSON(data).addTo(map);
+    layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");
+  });
+
+fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
+  .then(responce => response.json())
+  .then(data => {
+    geojsonLayer = L.geojson(data).addTo(map);
+    layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
+  });
+    
 layerControl.addBaseLayer(osm,"OpenStreetMap");
 layerControl.addBaseLayer(google,"Google map");
 layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
