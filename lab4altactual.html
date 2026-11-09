@@ -45,6 +45,14 @@
       transparent: true,
       attribution: '&copy; NLCD WMS'
     }).addTo(map);
+
+    var Iowa = L.tileLayer.wms('https://ortho.gis.iastate.edu/arcgis/services/ortho/Iowa_Civil_Townships/MapServer/WMSServer', {
+      layers:'Iowa_Civil_Townships',
+      format:'image/png',
+      transparent: true,
+      attribution: '&copy; ArcGIS WMS'
+    }).addTo(map)
+      
     
     // Fetch and add GeoJSON layers from URLs (using Fetch API)
     fetch('https://raw.githubusercontent.com/PublicaMundi/MappingAPI/refs/heads/master/data/geojson/us-states.json')
@@ -53,7 +61,14 @@
         geojsonLayer1 = L.geoJSON(data).addTo(map);
         layerControl.addOverlay(geojsonLayer1, "GeoJSON Layer 1 (US States)");
       });
+    
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
+      .then(response => response.json())
+      .then(data => {
+        geojsonLayer2 = L.geoJSON(data).addTo(map);
+        layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
+      });
+     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
       .then(response => response.json())
       .then(data => {
         geojsonLayer2 = L.geoJSON(data).addTo(map);
@@ -65,6 +80,7 @@
     
     layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
     layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
+    layerControl.addOverlay(landcoverWMS,"Iowa Civil Townships (WMS)");
   </script>
 </body>
 </html>
