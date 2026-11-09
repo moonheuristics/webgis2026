@@ -46,8 +46,8 @@
       attribution: '&copy; NLCD WMS'
     }).addTo(map);
 
-    var Iowa = L.tileLayer.wms('https://ortho.gis.iastate.edu/arcgis/services/ortho/Iowa_Civil_Townships/MapServer/WMSServer', {
-      layers:'Iowa_Civil_Townships',
+    var Iowa = L.tileLayer.wms('\https://ortho.gis.iastate.edu/arcgis/services/ortho/lidar_2020_intensity/ImageServer/WMSServer?', {
+      layers:'lidar_2020_intensity',
       format:'image/png',
       transparent: true,
       attribution: '&copy; ArcGIS WMS'
@@ -74,7 +74,7 @@
     
     layerControl.addOverlay(elevationWMS,"Elevation (WMS)");
     layerControl.addOverlay(landcoverWMS,"NLCD Land Cover 2021 (WMS)");
-    layerControl.addOverlay(landcoverWMS,"Iowa Civil Townships (WMS)");
+    layerControl.addOverlay(Iowa,"Iowa lidar 2020 Intensity (WMS)");
   </script>
 </body>
 </html>
