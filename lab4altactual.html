@@ -23,7 +23,7 @@
     var layerControl= L.control.layers(null, null, {collasped: false }).addTo(map);
     
     var osm=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 12,
+      maxZoom: 13,
       attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     
@@ -63,12 +63,6 @@
       });
     
     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
-      .then(response => response.json())
-      .then(data => {
-        geojsonLayer2 = L.geoJSON(data).addTo(map);
-        layerControl.addOverlay(geojsonLayer2, "GeoJSON Layer 2 (Earthquake)");
-      });
-     fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')
       .then(response => response.json())
       .then(data => {
         geojsonLayer2 = L.geoJSON(data).addTo(map);
